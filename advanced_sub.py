@@ -30,12 +30,12 @@ REGEXP_3_REPL = r' *\g<g1>*'
 # one two three ---> two one three
 # dog cat wolf  ---> cat dog wolf
 # goose car rat ---> goose rat car
-REGEXP_4 = r'(?P<g1>\b\w{3}\b) (?P<g2>\b\w{3}\b)'
-REGEXP_4_REPL = '\g<g2> \g<g1>'
+REGEXP_4 = r'(\b\w{3}\b) (\b\w{3}\b)'
+REGEXP_4_REPL = r'\2 \1'
 
 # cat dog                     ---> cat dog
 # cat dog cat                 ---> cat dog cat
 # dog cat dog cat cat         ---> dog dog
-# dog cat dog rat rat cat cat ---> dog dog rat rat
-REGEXP_5 = r'cat\s(?P<g1>dog(\srat)*)(\scat){2}'
-REGEXP_5_REPL = r'\g<g1>'
+# dog wolf dog rat rat wolf wolf ---> dog dog rat rat
+REGEXP_5 = r'\s(\w*)(.*)(\s\1){2}'
+REGEXP_5_REPL = r'\2'
