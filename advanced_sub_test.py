@@ -51,7 +51,7 @@ class AdvancedSubTest(unittest.TestCase):
                 'cat dog': 'cat dog',
                 'cat dog cat': 'cat dog cat',
                 'dog cat dog cat cat': 'dog dog',
-                'dog wolf dog rat rat wolf wolf': 'dog dog rat rat'
+                'dog cat dog rat rat cat cat': 'dog dog rat rat'
             }
         )
     }    
